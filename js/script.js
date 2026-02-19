@@ -1,3 +1,7 @@
+if (globalThis.smoothscroll?.polyfill) {
+  globalThis.smoothscroll.polyfill();
+}
+
 // Set current year
 const yearElement = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
@@ -6,33 +10,42 @@ yearElement.textContent = currentYear;
 // Make mobile navigation work
 const btnNavElement = document.querySelector(".btn-mobile-nav");
 const headerElement = document.querySelector(".header");
-btnNavElement.addEventListener("click",  () => {
-  headerElement.classList.toggle("nav-open");
+btnNavElement.addEventListener("click", () => {
+  const isOpen = headerElement.classList.toggle("nav-open");
+  btnNavElement.setAttribute("aria-expanded", String(isOpen));
 });
 
 // Smooth scrolling animation
 const allLinks = document.querySelectorAll("a:link");
-allLinks.forEach( (link) => {
+allLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    if (!href.startsWith("#")) return;
     event.preventDefault();
 
-    const href = link.getAttribute("href");
     // Scroll back to top
-    if (href === "#")
+    if (href === "#") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
+    }
 
     // Scroll to other links
     if (href !== "#" && href.startsWith("#")) {
       const sectionElement = document.querySelector(href);
-      sectionElement.scrollIntoView({ behavior: "smooth" });
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
 
     // Close mobile naviagtion
-    if (link.classList.contains("main-nav-link"))
-      headerEl.classList.toggle("nav-open");
+    if (link.classList.contains("main-nav-link")) {
+      headerElement.classList.remove("nav-open");
+      btnNavElement.setAttribute("aria-expanded", "false");
+    }
   });
 });
 
