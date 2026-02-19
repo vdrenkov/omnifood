@@ -10,6 +10,8 @@ Responsive marketing site for the fictional Omnifood meal subscription service. 
 - Smooth scroll behavior for internal anchor links and automatic current-year footer update.
 - Sticky header using the Intersection Observer API and a Safari flexbox gap fallback.
 - Progressive Web App metadata (`manifest.webmanifest`) and favicons in `img/`.
+- SEO/social metadata (canonical URL, Open Graph, Twitter cards, WebSite JSON-LD).
+- Indexing support via `robots.txt` and `sitemap.xml`.
 
 ## Tech Stack
 
@@ -37,8 +39,11 @@ serve .
 ├── js/
 │   └── script.js         # Mobile nav toggle, smooth scrolling, sticky header, polyfills
 ├── img/                  # Optimized images and icons
+│   └── og-cover.jpg      # Social sharing preview image (1200x630)
 ├── index.html            # Main HTML document
-└── manifest.webmanifest  # PWA metadata
+├── robots.txt            # Crawler directives
+├── manifest.webmanifest  # PWA metadata
+└── sitemap.xml           # URL index for search engines
 ```
 
 ## Deployment
