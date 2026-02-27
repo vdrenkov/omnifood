@@ -90,7 +90,7 @@
         <img class="logo" alt="Omnifood logo" src="img/omnifood-logo.png" />
       </a>
 
-      <nav class="main-nav" id="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
         <ul class="main-nav-list">
           <li><a class="main-nav-link" href="#how">How it works</a></li>
           <li><a class="main-nav-link" href="#meals">Meals</a></li>
@@ -677,11 +677,13 @@
                 <button class="btn btn--form">Sign up now</button>
               </form>
             </div>
-            <div
-              class="cta-img-box"
-              role="img"
-              aria-label="Woman enjoying food"
-            ></div>
+            <div class="cta-img-box">
+              <img
+                class="cta-img"
+                src="img/eating.jpg"
+                alt="Woman enjoying food"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -734,7 +736,7 @@
           </address>
         </div>
 
-        <nav class="nav-col">
+        <nav class="nav-col" aria-label="Account links">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Create account</a></li>
@@ -744,7 +746,7 @@
           </ul>
         </nav>
 
-        <nav class="nav-col">
+        <nav class="nav-col" aria-label="Company links">
           <p class="footer-heading">Company</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">About Omnifood</a></li>
@@ -754,7 +756,7 @@
           </ul>
         </nav>
 
-        <nav class="nav-col">
+        <nav class="nav-col" aria-label="Resources links">
           <p class="footer-heading">Resources</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Recipe directory </a></li>

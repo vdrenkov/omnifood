@@ -85,7 +85,7 @@ function checkFlexGap() {
 
   document.body.appendChild(flex);
   const isSupported = flex.scrollHeight === 1;
-  flex.parentNode.removeChild(flex);
+  flex.remove();
 
   if (!isSupported) document.body.classList.add("no-flexbox-gap");
 }

@@ -1,3 +1,11 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
 /* Below 1344px (Smaller desktops) */
 @media (max-width: 84em) {
   .hero {
@@ -268,14 +276,6 @@
     grid-row: 1;
   }
 }
-
-/* 
-- Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
 
 /* Fixing Safari flexbox gap */
 .no-flexbox-gap .main-nav-list li:not(:last-child) {

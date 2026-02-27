@@ -503,14 +503,27 @@
 }
 
 .cta-img-box {
+  position: relative;
+}
+
+.cta-img-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: linear-gradient(
-      to right bottom,
-      rgba(235, 151, 78, 0.35),
-      rgba(230, 125, 34, 0.35)
-    ),
-    url("../img/eating.jpg");
-  background-size: cover;
-  background-position: center;
+    to right bottom,
+    rgba(235, 151, 78, 0.35),
+    rgba(230, 125, 34, 0.35)
+  );
+  pointer-events: none;
+}
+
+.cta-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .cta-form {
