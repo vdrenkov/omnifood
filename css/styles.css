@@ -42,12 +42,12 @@
   padding: 1.2rem 2.4rem;
   border-radius: 9px;
   color: #fff;
-  background-color: #e67e22;
+  background-color: #b75d12;
 }
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
-  background-color: #cf711f;
+  background-color: #a65311;
 }
 
 /* Mobile */
@@ -450,7 +450,7 @@
 }
 
 .feature-icon {
-  color: #e67e22;
+  color: #a65311;
   height: 3.2rem;
   width: 3.2rem;
   background-color: #fdf2e9;
