@@ -6,7 +6,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node tooling (if ever used for linting or bundling)
+# Generated files
 node_modules/
 dist/
 *.log

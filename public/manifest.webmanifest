@@ -3,10 +3,14 @@
   "short_name": "Omnifood",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fdf2e9",
-  "theme_color": "#e67e22",
+  "background_color": "#fffaf2",
+  "theme_color": "#f6e6cf",
   "icons": [
-    { "src": "images/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    {
+      "src": "images/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
     { "src": "images/favicon-512.png", "type": "image/png", "sizes": "512x512" }
   ]
 }
