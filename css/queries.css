@@ -104,7 +104,8 @@
     box-shadow: 0 1.2rem 2.4rem #283a2c20;
     visibility: hidden;
   }
-  .header.nav-open .main-nav {
+  .header.nav-open .main-nav,
+  .header[data-enhanced] .main-nav:focus-within {
     visibility: visible;
   }
   .header[data-enhanced] .main-nav-list {
