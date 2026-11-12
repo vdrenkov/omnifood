@@ -1,5 +1,6 @@
 const header = document.querySelector<HTMLElement>(".header")!;
 const button = header.querySelector<HTMLButtonElement>(".btn-mobile-nav")!;
+const navigation = header.querySelector<HTMLElement>(".main-nav")!;
 
 function setNavigationOpen(open: boolean) {
   header.classList.toggle("nav-open", open);
@@ -47,7 +48,13 @@ header.addEventListener("focusout", (event) => {
   }
 });
 
-window.matchMedia("(max-width: 59em)").addEventListener("change", () => {
+window.matchMedia("(max-width: 59em)").addEventListener("change", (event) => {
+  if (event.matches && navigation.contains(document.activeElement)) {
+    button.focus();
+  } else if (!event.matches && document.activeElement === button) {
+    navigation.querySelector<HTMLAnchorElement>("a")!.focus();
+  }
+
   setNavigationOpen(false);
 });
 

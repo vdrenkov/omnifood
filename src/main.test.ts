@@ -87,6 +87,36 @@ describe("navigation", () => {
     media.dispatchEvent(new Event("change"));
     expect(button.getAttribute("aria-expanded")).toBe("false");
   });
+
+  it("navigation_mobileBreakpointWithLinkFocused_movesFocusToButton", () => {
+    navigation.querySelector("a")!.focus();
+
+    media.dispatchEvent(Object.assign(new Event("change"), { matches: true }));
+
+    expect(document.activeElement).toBe(button);
+    expect(button.getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it("navigation_desktopBreakpointWithButtonFocused_movesFocusToFirstLink", () => {
+    button.focus();
+
+    media.dispatchEvent(Object.assign(new Event("change"), { matches: false }));
+
+    expect(document.activeElement).toBe(navigation.querySelector("a"));
+    expect(button.getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it.each([true, false])(
+    "navigation_breakpointWithContentFocused%s_keepsContentFocus",
+    (matches) => {
+      const link = document.querySelector<HTMLAnchorElement>(".hero a")!;
+      link.focus();
+
+      media.dispatchEvent(Object.assign(new Event("change"), { matches }));
+
+      expect(document.activeElement).toBe(link);
+    },
+  );
 });
 
 it("page_loaded_displaysCurrentYear", () => {
